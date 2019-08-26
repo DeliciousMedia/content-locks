@@ -3,7 +3,7 @@
  * Plugin Name:       Content Locks
  * Plugin URI:        http://github.com/deliciousmedia/content-locks/
  * Description:       Allows specified users to prevent certain pages, posts, attachments or custom post types from being edited or deleted.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 5.0
  * Requires PHP:      7.0
  * Author:            Delicious Media Limited

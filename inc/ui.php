@@ -83,7 +83,7 @@ function cl_post_locks_metabox_save( $post_id ) {
 		return false;
 	}
 
-	if ( ! wp_verify_nonce( $_POST['cl_post_locks_nonce'], 'cl_post_locks_action' ) ) {
+	if ( isset( $_POST['cl_post_locks_nonce'] ) && ! wp_verify_nonce( $_POST['cl_post_locks_nonce'], 'cl_post_locks_action' ) ) {
 
 		wp_die( esc_html__( 'You are not allowed to do that.', 'content-locks' ) );
 	}
