@@ -102,6 +102,11 @@ add_action( 'update_option_cl_settings', 'cl_assign_capability', 10, 3 );
  */
 function cl_maybe_enforce_content_locks( $required_cap, $cap, $user_id, $args ) {
 
+	// map_meta_cap() can be called without args; if so return early as we won't be modifying the value.
+	if ( ! isset( $args ) || empty( $args ) ) {
+		return $required_cap;
+	}
+
 	if ( 'delete_post' == $cap ) {
 		if ( cl_post_has_flag( $args[0], 'cl_no_delete' ) || cl_post_has_flag( $args[0], 'cl_no_edit' ) ) {
 			$required_cap[] = 'do_not_allow';
